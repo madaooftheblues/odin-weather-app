@@ -1,4 +1,4 @@
-export default class Observer {
+class Observer {
     events = {}
 
     subscribe(eName, fn) {
@@ -18,3 +18,7 @@ export default class Observer {
         })
     }
 }
+
+const observer = Observer()
+
+export default observer
