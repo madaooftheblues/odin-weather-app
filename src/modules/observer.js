@@ -19,6 +19,6 @@ class Observer {
     }
 }
 
-const observer = Observer()
+const observer = new Observer()
 
 export default observer
