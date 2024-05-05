@@ -2,7 +2,22 @@ header {
     text-align: center;
 }
 
-.center {
+.flex {
     display: flex;
+}
+
+.center {
     justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.col {
+    flex-direction: column;
 }

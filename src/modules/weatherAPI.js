@@ -16,15 +16,32 @@ async function fetchWeatherData(city) {
 function parse(data) {
     const city = data.location.name
     const localtime = data.location.localtime
-    const temperature = data.current.temp_c
+    const tempC = data.current.temp_c
+    const tempF = data.current.temp_f
+    const condition = data.current.condition.text
+    const wind = data.current.wind_kph
+    const humidity = data.current.humidity
+    const feelsLikeC = data.current.feelslike_c
+    const feelsLikeF = data.current.feelslike_f
 
-    return { city, localtime, temperature }
+    return {
+        city,
+        localtime,
+        tempC,
+        tempF,
+        condition,
+        wind,
+        humidity,
+        feelsLikeC,
+        feelsLikeF,
+    }
 }
 
 async function processWeatherData(city) {
     const data = await fetchWeatherData(city)
     const parsedData = await parse(data)
 
+    console.log(data)
     observer.publish('weatherDataProcessed', parsedData)
 
     return parsedData
