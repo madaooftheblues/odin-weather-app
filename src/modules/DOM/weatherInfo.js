@@ -1,3 +1,5 @@
+import { dateToAlpha } from '../utils.js'
+
 const weatherInfoElm = document.getElementById('weather-info')
 const currentDayDateElm = weatherInfoElm.querySelector('#current-day-date')
 const cityElm = weatherInfoElm.querySelector('#city')
@@ -13,12 +15,11 @@ function render() {
     const { city, localtime, temperature } = weatherInfo
 
     cityElm.textContent = city
-    currentDayDateElm.textContent = localtime
+    currentDayDateElm.textContent = dateToAlpha(localtime)
     temperatureElm.textContent = temperature
 }
 
 export function setWeatherInfo(data) {
     Object.assign(weatherInfo, data)
-    console.log(data)
     render()
 }
