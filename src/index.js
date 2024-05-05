@@ -8,5 +8,3 @@ import { setWeatherInfo } from './modules/DOM/weatherInfo.js'
 cityInputForm.init()
 observer.subscribe('cityQueried', weatherAPI)
 observer.subscribe('weatherDataProcessed', setWeatherInfo)
-
-console.log(setWeatherInfo)

@@ -23,12 +23,11 @@ function parse(data) {
 
 async function processWeatherData(city) {
     const data = await fetchWeatherData(city)
-    console.log(data)
-    const cleanedData = await parse(data)
+    const parsedData = await parse(data)
 
-    observer.publish('weatherDataProcessed', cleanedData)
+    observer.publish('weatherDataProcessed', parsedData)
 
-    return cleanedData
+    return parsedData
 }
 
 export default processWeatherData
