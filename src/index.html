@@ -8,19 +8,37 @@
     </head>
     <body>
         <header class="container">
-            <h1>Weather</h1>
+            <h3>Weather</h3>
         </header>
         <main class="container">
-            <form action="submit" id="city-input-form">
-                <fieldset role="group">
-                    <input
-                        type="text"
-                        placeholder="City Name eg. Oslo, London etc..."
-                        id="city-input"
-                    />
-                    <button>Submit</button>
-                </fieldset>
-            </form>
+            <section>
+                <form action="submit" id="city-input-form">
+                    <fieldset role="group">
+                        <input
+                            type="text"
+                            placeholder="City Name eg. Oslo, London etc..."
+                            id="city-input"
+                        />
+                        <button>Submit</button>
+                    </fieldset>
+                </form>
+            </section>
+            <section>
+                <div class="container" id="weather-info">
+                    <div class="container center">
+                        <span id="current-day-date">
+                            Friday, 12 May, 2023
+                        </span>
+                    </div>
+                    <div class="container center">
+                        <h1 id="city">Berlin</h1>
+                    </div>
+                    <div class="container center">
+                        <h2 id="temperature">22</h2>
+                        <span>&deg;</span>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer></footer>
     </body>
