@@ -28,7 +28,7 @@ function dateToAlpha(dateStr) {
     const d = new Date(dateStr)
 
     const day = dayMap[d.getDay()]
-    const month = monthMap[d.getDay()]
+    const month = monthMap[d.getMonth()]
     const date = d.getDate()
     const year = d.getFullYear()
 
