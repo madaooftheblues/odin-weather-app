@@ -2,7 +2,7 @@ import observer from './observer.js'
 
 const API_KEY = process.env.WEATHER
 const baseURL = 'http://api.weatherapi.com/v1'
-const forecastDays = 4
+const forecastDays = 3
 
 async function fetchWeatherData(city) {
     try {
