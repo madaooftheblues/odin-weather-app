@@ -12,4 +12,4 @@ Live Preview => [Cither](https://madaooftheblues.github.io/odin-weather-app/)
 > ![city weather information](./images/1.png)
 
 > Hourly and Daily Forecasts
-> ![forecats](./images/2.png)
+> ![forecasts](./images/2.png)
