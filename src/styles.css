@@ -23,6 +23,11 @@ body {
     display: inline;
 }
 
+#condition-icon {
+    height: 4rem;
+    width: 4rem;
+}
+
 #feelslike,
 #humidity,
 #wind {
@@ -35,6 +40,10 @@ body {
 
 .center {
     justify-content: center;
+}
+
+.center-align {
+    align-items: center;
 }
 
 .space-between {
