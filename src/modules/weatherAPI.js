@@ -5,12 +5,17 @@ const baseURL = 'http://api.weatherapi.com/v1'
 const forecastDays = 4
 
 async function fetchWeatherData(city) {
-    const res = await fetch(
-        `${baseURL}/forecast.json?key=${API_KEY}&q=${city}&days=${forecastDays}`,
-    )
-    const data = await res.json()
-
-    return data
+    try {
+        const res = await fetch(
+            `${baseURL}/forecast.json?key=${API_KEY}&q=${city}&days=${forecastDays}`,
+        )
+        const data = await res.json()
+        return data
+    } catch (e) {
+        console.log('Error fetching weather data', e)
+    } finally {
+        observer.publish('cityQueryCompleted', '')
+    }
 }
 
 function parse(data) {
@@ -66,13 +71,16 @@ function parseDaily(data) {
 }
 
 async function processWeatherData(city) {
-    const data = await fetchWeatherData(city)
-    const parsedData = await parse(data)
+    try {
+        const data = await fetchWeatherData(city)
+        const parsedData = await parse(data)
 
-    console.log(data)
-    observer.publish('weatherDataProcessed', parsedData)
+        observer.publish('weatherDataProcessed', parsedData)
 
-    return parsedData
+        return parsedData
+    } catch (e) {
+        console.log('Error fetching weather data', e)
+    }
 }
 
 export default processWeatherData
