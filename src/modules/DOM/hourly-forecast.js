@@ -1,4 +1,6 @@
+import observer from '../observer.js'
 import WeatherCard from './components/WeatherCard.js'
+import unitSwitch from './unit-switch.js'
 
 const weatherInfoElm = document.getElementById('weather-info')
 const hourlyForecastElm = weatherInfoElm.querySelector('#hourly-forecast')
@@ -6,9 +8,10 @@ const hourlyForecastElm = weatherInfoElm.querySelector('#hourly-forecast')
 const todayHourly = []
 
 function makeWeatherCards() {
+    const unit = unitSwitch.getUnit()
     const cards = todayHourly.map((hour) => {
         const icon = `${hour.isDay ? '' : 'n'}${hour.icon}`
-        const temp = hour.tempC + '°'
+        const temp = (unit ? hour.tempF : hour.tempC) + '°'
         return WeatherCard(hour.time, icon, temp)
     })
 
@@ -16,7 +19,6 @@ function makeWeatherCards() {
 }
 
 function render() {
-    console.log(todayHourly)
     const todayHourlyCards = makeWeatherCards()
     hourlyForecastElm.textContent = ''
     hourlyForecastElm.append(...todayHourlyCards)
@@ -28,4 +30,7 @@ function setTodayHourly(data) {
     render()
 }
 
-export default { setTodayHourly }
+function init() {
+    observer.subscribe('unitSwitched', render)
+}
+export default { init, setTodayHourly }

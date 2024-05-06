@@ -1,7 +1,8 @@
+import observer from '../observer.js'
 import { dateToAlpha } from '../utils.js'
+import unitSwitch from './unit-switch.js'
 
 const weatherInfoElm = document.getElementById('weather-info')
-const unitSwitch = weatherInfoElm.querySelector('#unit')
 const currentDayDateElm = weatherInfoElm.querySelector('#current-day-date')
 const cityElm = weatherInfoElm.querySelector('#city')
 const temperatureElm = weatherInfoElm.querySelector('#temperature')
@@ -12,7 +13,6 @@ const conditionIcon = weatherInfoElm.querySelector('#condition-icon')
 const feelsLikeElm = weatherInfoElm.querySelector('#feelslike')
 
 const weatherInfo = {}
-let unit = false
 const iconCache = {}
 
 function importAll(r) {
@@ -35,6 +35,7 @@ function render() {
         icon,
         isDay,
     } = weatherInfo
+    const unit = unitSwitch.getUnit()
 
     cityElm.textContent = city
     currentDayDateElm.textContent = dateToAlpha(localtime)
@@ -46,22 +47,13 @@ function render() {
     windElm.textContent = `${wind}km/h`
 }
 
-function setUnit() {
-    unit = unitSwitch.checked
-    render()
-}
-
 function setWeatherInfo(data) {
     Object.assign(weatherInfo, data)
     render()
 }
 
-function bindEvents() {
-    unitSwitch.addEventListener('change', setUnit)
-}
-
 function init() {
-    bindEvents()
+    observer.subscribe('unitSwitched', render)
 }
 
 export default { init, setWeatherInfo }
