@@ -31,6 +31,14 @@ body {
     background-color: var(--pico-color);
 }
 
+#logo {
+    height: 4rem;
+}
+
+#brand-name {
+    margin: 0 0.5rem;
+}
+
 #weather-info {
     position: relative;
 }

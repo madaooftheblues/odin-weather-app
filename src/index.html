@@ -4,11 +4,13 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="color-scheme" content="light dark" />
-        <title>Weather</title>
+        <link rel="icon" href='<%= require("./assets/logo/logo1.png") %>' />
+        <title>Cither</title>
     </head>
     <body>
-        <header class="container">
-            <h3>Weather</h3>
+        <header class="container flex center-align">
+            <img src='<%= require("./assets/logo/logo1.png") %>' id="logo" />
+            <h3 id="brand-name">Cither</h3>
         </header>
         <main class="container">
             <section>
@@ -28,14 +30,14 @@
                     <div class="container flex center">
                         <small id="current-day-date"> </small>
                         <label id="unit-container">
-                            <small>C</small>
+                            <small>&deg;C</small>
                             <input
                                 name="terms"
                                 type="checkbox"
                                 role="switch"
                                 id="unit"
                             />
-                            <small>F</small>
+                            <small>&deg;F</small>
                         </label>
                     </div>
                     <div class="container flex center">
