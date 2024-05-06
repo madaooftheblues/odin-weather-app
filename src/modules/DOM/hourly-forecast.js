@@ -8,7 +8,8 @@ const todayHourly = []
 function makeWeatherCards() {
     const cards = todayHourly.map((hour) => {
         const icon = `${hour.isDay ? '' : 'n'}${hour.icon}`
-        return WeatherCard(hour.time, icon, hour.tempC)
+        const temp = hour.tempC + '°'
+        return WeatherCard(hour.time, icon, temp)
     })
 
     return cards

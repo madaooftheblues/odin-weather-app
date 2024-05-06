@@ -10,7 +10,7 @@ body {
     position: relative;
 }
 
-#temp-main>* {
+#temp-main > * {
     flex: 1;
 }
 
@@ -19,19 +19,20 @@ body {
     right: 0;
 }
 
-#unit-container>small {
+#unit-container > small {
     display: inline;
 }
 
 #condition-icon,
-.weather-card>img {
+.weather-card > img {
     height: 4rem;
     width: 4rem;
 }
 
 #feelslike,
 #humidity,
-#wind {
+#wind,
+.bold {
     font-weight: 700;
 }
 
@@ -63,7 +64,14 @@ body {
     gap: 5px;
 }
 
+.scroll-x {
+    overflow-x: scroll;
+}
+
 .weather-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    min-width: 8rem;
+    gap: 5px;
 }

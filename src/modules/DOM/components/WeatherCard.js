@@ -8,9 +8,11 @@ export default function WeatherCard(head, src, foot) {
     header.textContent = head
     img.src = src
     footer.textContent = foot
-    card.append(head)
+    footer.classList.add('bold')
+
+    card.append(header)
     card.append(img)
-    card.append(foot)
+    card.append(footer)
 
     return card
 }
