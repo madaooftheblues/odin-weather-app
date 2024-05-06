@@ -1,9 +1,25 @@
-header {
+header,
+footer {
     text-align: center;
 }
 
 body {
     min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+    background-color: var(--pico-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--pico-primary);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--pico-color);
 }
 
 #weather-info {
@@ -62,6 +78,10 @@ body {
 
 .gap-5 {
     gap: 5px;
+}
+
+.gap-10 {
+    gap: 10px;
 }
 
 .scroll-x {
