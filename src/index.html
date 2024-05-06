@@ -25,52 +25,52 @@
             </section>
             <section>
                 <div class="container" id="weather-info">
-                    <label id="unit-container">
-                        <span>C</span>
-                        <input
-                            name="terms"
-                            type="checkbox"
-                            role="switch"
-                            id="unit"
-                        />
-                        <span>F</span>
-                    </label>
                     <div class="container flex center">
-                        <span id="current-day-date">
+                        <small id="current-day-date">
                             Friday, 12 May, 2023
-                        </span>
+                        </small>
+                        <label id="unit-container">
+                            <small>C</small>
+                            <input
+                                name="terms"
+                                type="checkbox"
+                                role="switch"
+                                id="unit"
+                            />
+                            <small>F</small>
+                        </label>
                     </div>
                     <div class="container flex center">
                         <h1 id="city">Berlin</h1>
                     </div>
                     <div class="container flex center" id="temp-main">
                         <div class="flex center">
-                            <span id="condition">Sunny</span>
+                            <small id="condition">Sunny</small>
                         </div>
                         <div class="flex center">
                             <h2 id="temperature">22</h2>
                         </div>
                         <div class="flex col">
-                            <div>
+                            <div class="flex gap-5">
                                 <img
                                     src='<%= require("./assets/icons/thermostat.svg") %>'
                                 />
-                                <span>Feels like: </span
-                                ><span id="feelslike"></span>
+                                <small>Feels like: </small
+                                ><small id="feelslike"></small>
                             </div>
-                            <div>
+                            <div class="flex gap-5">
                                 <img
                                     src='<%= require("./assets/icons/humidity.svg") %>'
                                 />
 
-                                <span>Humidity: </span
-                                ><span id="humidity"></span>
+                                <small>Humidity: </small
+                                ><small id="humidity"></small>
                             </div>
-                            <div>
+                            <div class="flex gap-5">
                                 <img
                                     src='<%= require("./assets/icons/wind.svg") %>'
                                 />
-                                <span>Wind: </span><span id="wind"></span>
+                                <small>Wind: </small><small id="wind"></small>
                             </div>
                         </div>
                     </div>

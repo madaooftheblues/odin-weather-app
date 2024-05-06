@@ -6,12 +6,21 @@ body {
     min-height: 100vh;
 }
 
+#weather-info {
+    position: relative;
+}
+
 #temp-main>* {
     flex: 1;
 }
 
 #unit-container {
-    float: right;
+    position: absolute;
+    right: 0;
+}
+
+#unit-container>small {
+    display: inline;
 }
 
 #feelslike,
@@ -38,4 +47,8 @@ body {
 
 .col {
     flex-direction: column;
+}
+
+.gap-5 {
+    gap: 5px;
 }
