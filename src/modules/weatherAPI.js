@@ -14,27 +14,21 @@ async function fetchWeatherData(city) {
 }
 
 function parse(data) {
-    const city = data.location.name
-    const localtime = data.location.localtime
-    const tempC = data.current.temp_c
-    const tempF = data.current.temp_f
-    const condition = data.current.condition.text
-    const wind = data.current.wind_kph
-    const humidity = data.current.humidity
-    const feelsLikeC = data.current.feelslike_c
-    const feelsLikeF = data.current.feelslike_f
-
-    return {
-        city,
-        localtime,
-        tempC,
-        tempF,
-        condition,
-        wind,
-        humidity,
-        feelsLikeC,
-        feelsLikeF,
+    const weatherData = {
+        city: data.location.name,
+        localtime: data.location.localtime,
+        tempC: data.current.temp_c,
+        tempF: data.current.temp_f,
+        condition: data.current.condition.text,
+        wind: data.current.wind_kph,
+        humidity: data.current.humidity,
+        feelsLikeC: data.current.feelslike_c,
+        feelsLikeF: data.current.feelslike_f,
+        is_day: data.current.is_day,
+        code: data.current.condition.code,
     }
+
+    return weatherData
 }
 
 async function processWeatherData(city) {
