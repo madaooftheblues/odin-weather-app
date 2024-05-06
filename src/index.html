@@ -25,7 +25,7 @@
             </section>
             <section>
                 <div class="container" id="weather-info">
-                    <label>
+                    <label id="unit-container">
                         <span>C</span>
                         <input
                             name="terms"
@@ -43,23 +43,33 @@
                     <div class="container flex center">
                         <h1 id="city">Berlin</h1>
                     </div>
-                    <div class="container flex space-around">
-                        <div class="flex">
+                    <div class="container flex center" id="temp-main">
+                        <div class="flex center">
                             <span id="condition">Sunny</span>
                         </div>
-                        <div class="flex">
+                        <div class="flex center">
                             <h2 id="temperature">22</h2>
-                            <span>&deg;</span>
                         </div>
                         <div class="flex col">
                             <div>
-                                <span>Felt: </span><span id="feelslike"></span>
+                                <img
+                                    src='<%= require("./assets/icons/thermostat.svg") %>'
+                                />
+                                <span>Feels like: </span
+                                ><span id="feelslike"></span>
                             </div>
                             <div>
+                                <img
+                                    src='<%= require("./assets/icons/humidity.svg") %>'
+                                />
+
                                 <span>Humidity: </span
                                 ><span id="humidity"></span>
                             </div>
                             <div>
+                                <img
+                                    src='<%= require("./assets/icons/wind.svg") %>'
+                                />
                                 <span>Wind: </span><span id="wind"></span>
                             </div>
                         </div>

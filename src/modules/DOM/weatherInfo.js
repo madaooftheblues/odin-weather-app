@@ -28,11 +28,11 @@ function render() {
 
     cityElm.textContent = city
     currentDayDateElm.textContent = dateToAlpha(localtime)
-    temperatureElm.textContent = unit ? tempF : tempC
-    feelsLikeElm.textContent = unit ? feelsLikeF : feelsLikeC
+    temperatureElm.textContent = (unit ? tempF : tempC) + '°'
+    feelsLikeElm.textContent = (unit ? feelsLikeF : feelsLikeC) + '°'
     conditionElm.textContent = condition
-    humidityElm.textContent = humidity
-    windElm.textContent = wind
+    humidityElm.textContent = `${humidity}%`
+    windElm.textContent = `${wind}km/h`
 }
 
 function setUnit() {
