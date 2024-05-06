@@ -23,7 +23,8 @@ body {
     display: inline;
 }
 
-#condition-icon {
+#condition-icon,
+.weather-card>img {
     height: 4rem;
     width: 4rem;
 }
@@ -60,4 +61,9 @@ body {
 
 .gap-5 {
     gap: 5px;
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: column;
 }

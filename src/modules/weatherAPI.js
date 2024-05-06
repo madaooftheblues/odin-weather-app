@@ -40,6 +40,7 @@ function parseTodayHourly(data) {
             tempF: hour.temp_f,
             icon: hour.condition.icon.split('/').at(-1),
             time: hour.time.split(' ').at(-1),
+            isDay: hour.is_day,
         }
         return weatherHourData
     })
