@@ -24,8 +24,8 @@ function parse(data) {
         humidity: data.current.humidity,
         feelsLikeC: data.current.feelslike_c,
         feelsLikeF: data.current.feelslike_f,
-        is_day: data.current.is_day,
-        code: data.current.condition.code,
+        isDay: data.current.is_day,
+        icon: data.current.condition.icon.split('/').at(-1),
     }
 
     return weatherData

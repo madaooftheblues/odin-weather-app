@@ -8,10 +8,18 @@ const temperatureElm = weatherInfoElm.querySelector('#temperature')
 const windElm = weatherInfoElm.querySelector('#wind')
 const humidityElm = weatherInfoElm.querySelector('#humidity')
 const conditionElm = weatherInfoElm.querySelector('#condition')
+const conditionIcon = weatherInfoElm.querySelector('#condition-icon')
 const feelsLikeElm = weatherInfoElm.querySelector('#feelslike')
 
 const weatherInfo = {}
 let unit = false
+const iconCache = {}
+
+function importAll(r) {
+    r.keys().forEach((key) => (iconCache[key] = r(key)))
+}
+
+importAll(require.context('../../assets/icons/weather/', true, /\.png$/))
 
 function render() {
     const {
@@ -24,15 +32,20 @@ function render() {
         feelsLikeF,
         humidity,
         wind,
+        icon,
+        isDay,
     } = weatherInfo
 
     cityElm.textContent = city
     currentDayDateElm.textContent = dateToAlpha(localtime)
     temperatureElm.textContent = (unit ? tempF : tempC) + '°'
     feelsLikeElm.textContent = (unit ? feelsLikeF : feelsLikeC) + '°'
+    conditionIcon.src = `./${isDay ? '' : 'n'}${icon}`
     conditionElm.textContent = condition
     humidityElm.textContent = `${humidity}%`
     windElm.textContent = `${wind}km/h`
+
+    console.log(conditionIcon.src)
 }
 
 function setUnit() {

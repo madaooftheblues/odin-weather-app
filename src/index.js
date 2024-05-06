@@ -1,5 +1,6 @@
 import './css/pico.min.css'
 import './styles.css'
+import './assets/icons/weather/day/113.png'
 import observer from './modules/observer.js'
 import weatherAPI from './modules/weatherAPI.js'
 import cityInputForm from './modules/DOM/cityInputForm.js'
