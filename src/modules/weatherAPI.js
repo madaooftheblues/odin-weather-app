@@ -2,7 +2,7 @@ import observer from './observer.js'
 
 const API_KEY = process.env.WEATHER
 const baseURL = 'http://api.weatherapi.com/v1'
-const forecastDays = 3
+const forecastDays = 4
 
 async function fetchWeatherData(city) {
     const res = await fetch(
@@ -26,9 +26,24 @@ function parse(data) {
         feelsLikeF: data.current.feelslike_f,
         isDay: data.current.is_day,
         icon: data.current.condition.icon.split('/').at(-1),
+        todayHourly: parseTodayHourly(data),
     }
 
     return weatherData
+}
+
+function parseTodayHourly(data) {
+    const base = data.forecast.forecastday.at(0).hour
+    const todayHourly = base.map((hour) => {
+        const weatherHourData = {
+            tempC: hour.temp_c,
+            tempF: hour.temp_f,
+            icon: hour.condition.icon.split('/').at(-1),
+            time: hour.time.split(' ').at(-1),
+        }
+        return weatherHourData
+    })
+    return todayHourly
 }
 
 async function processWeatherData(city) {

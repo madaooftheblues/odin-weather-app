@@ -10,6 +10,7 @@ const humidityElm = weatherInfoElm.querySelector('#humidity')
 const conditionElm = weatherInfoElm.querySelector('#condition')
 const conditionIcon = weatherInfoElm.querySelector('#condition-icon')
 const feelsLikeElm = weatherInfoElm.querySelector('#feelslike')
+const hourlyForecastElm = weatherInfoElm.querySelector('#hourly-forecast')
 
 const weatherInfo = {}
 let unit = false
@@ -34,6 +35,7 @@ function render() {
         wind,
         icon,
         isDay,
+        todayHourly,
     } = weatherInfo
 
     cityElm.textContent = city
