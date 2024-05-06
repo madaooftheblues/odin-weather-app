@@ -20,3 +20,5 @@ observer.subscribe('weatherDataProcessed', weatherInfo.setWeatherInfo)
 observer.subscribe('cityQueryCompleted', cityInputForm.setBusy)
 observer.subscribe('weatherDataProcessed', hourlyForecast.setTodayHourly)
 observer.subscribe('weatherDataProcessed', dailyForecast.setDaily)
+
+weatherAPI('Lahore')

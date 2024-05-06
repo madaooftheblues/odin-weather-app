@@ -3,6 +3,15 @@ footer {
     text-align: center;
 }
 
+body > header,
+body > main {
+    padding: 0;
+}
+
+body > header {
+    margin-top: 12px;
+}
+
 body {
     min-height: 100vh;
 }
