@@ -33,4 +33,5 @@ function setTodayHourly(data) {
 function init() {
     observer.subscribe('unitSwitched', render)
 }
+
 export default { init, setTodayHourly }

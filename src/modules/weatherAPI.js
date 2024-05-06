@@ -27,6 +27,7 @@ function parse(data) {
         isDay: data.current.is_day,
         icon: data.current.condition.icon.split('/').at(-1),
         todayHourly: parseTodayHourly(data),
+        daily: parseDaily(data),
     }
 
     return weatherData
@@ -45,6 +46,23 @@ function parseTodayHourly(data) {
         return weatherHourData
     })
     return todayHourly
+}
+
+function parseDaily(data) {
+    const base = data.forecast.forecastday
+    const daily = base.map((d) => {
+        const day = d.day
+        const weatherDayData = {
+            tempC: day.avgtemp_c,
+            tempF: day.avgtemp_f,
+            icon: day.condition.icon.split('/').at(-1),
+            date: d.date,
+        }
+
+        return weatherDayData
+    })
+
+    return daily
 }
 
 async function processWeatherData(city) {

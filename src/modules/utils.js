@@ -35,4 +35,11 @@ function dateToAlpha(dateStr) {
     return `${day}, ${date} ${month}, ${year}`
 }
 
-export { dateToAlpha }
+function dateToDay(dateStr) {
+    if (!dateStr) return ''
+    const d = new Date(dateStr)
+    const dayName = dayMap[d.getDay()]
+    return dayName || ''
+}
+
+export { dateToAlpha, dateToDay }
